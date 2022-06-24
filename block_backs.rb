@@ -1,1 +1,3 @@
-puts "New repo created"
+3.times do
+	puts "Echo!"	
+end
