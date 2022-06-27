@@ -12,12 +12,12 @@ class Order
 end
 
 orders = []
-5.times do
-	orders << Order.new("customer@example.com", 10)
-end
-# puts "upto ==========="
-# 1.upto(5) do |n|
-# 	orders << Order.new("customer#{n}@example.com", n * 10)
+# 5.times do
+# 	orders << Order.new("customer@example.com", 10)
 # end
+puts "upto ==========="
+1.upto(5) do |n|
+	orders << Order.new("customer#{n}@example.com", n * 10)
+end
 
 puts orders
