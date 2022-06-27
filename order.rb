@@ -15,8 +15,8 @@ orders = []
 # 5.times do
 # 	orders << Order.new("customer@example.com", 10)
 # end
-
-5.times do |n|
+puts "upto ==========="
+1.upto(5) do |n|
 	orders << Order.new("customer#{n}@example.com", n * 10)
 end
 
