@@ -8,7 +8,7 @@ class Order
 
 	def initialize( email, state, total, status=:pending )
 		@email = email
-		@statue = state
+		@state = state
 		@total = total
 		@status = status
 	end
@@ -73,6 +73,15 @@ puts "Taxes:"
 co_taxes = orders.select { |o| o.state == "CO" }.map { |o| o.tax }
 p co_taxes
 
-sum = 0
-orders.each { |order| sum += order.total }
+# sum = 0
+# orders.each { |order| sum += order.total }
+# puts "Total sales: $#{sum}"
+
+sum = orders.reduce(0) { |sum, order| sum + order.total }
 puts "Total sales: $#{sum}"
+
+total_tax = orders.reduce(0) { |total, order| total + order.tax }
+puts "Total tax: $#{total_tax}"
+
+total_tax2 = orders.map { |o| o.tax}.reduce(:+)
+puts "Total tax: $#{total_tax2}"
